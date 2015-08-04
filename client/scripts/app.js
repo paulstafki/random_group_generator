@@ -13,14 +13,17 @@ function appendallthebuttons() {
     $('.moButtons').append('<button class="randomize">randomize</button>');
 }
 
+//////$(html).hide().appendTo("#mycontent").fadeIn(1000);
+
 function splitTeams (array) {
     $('.groups').children().remove();
     for (var i = 1; i <= numGroups; i++) {
-        $('.groups').append('<div class="teams' + i + '">Team: ' +(i)+ '</div>');
+        $('.groups').append('<div class="teams' + i + ' teamsies">Team: ' +(i)+ '</div>');
     }
     var groupIndex = 1;
     for (var j = 0; j < array.length; j++) {
         $('.teams' + groupIndex).append('<p>' + peopleArray[j] + '</p>');
+        $('.teams' + groupIndex + ' p').last().hide().delay(200 * j).fadeIn();     //NOTE THE SPACE BETWEEN THE CLASS AND P!!!!!!!!1
         if (groupIndex < numGroups) {
             groupIndex++;
         } else {
