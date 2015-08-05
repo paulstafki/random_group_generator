@@ -13,12 +13,10 @@ function appendallthebuttons() {
     $('.moButtons').append('<button class="randomize">randomize</button>');
 }
 
-//////$(html).hide().appendTo("#mycontent").fadeIn(1000);
-
 function splitTeams (array) {
     $('.groups').children().remove();
     for (var i = 1; i <= numGroups; i++) {
-        $('.groups').append('<div class="teams' + i + ' teamsies">Team: ' +(i)+ '</div>');
+        $('.groups').append('<div class="teams' + i + ' teamsies"><h2>Team: ' +(i)+ '</h2></div>');
     }
     var groupIndex = 1;
     for (var j = 0; j < array.length; j++) {
@@ -44,7 +42,9 @@ $(document).ready(function (){
         }
     });
     $('body').on('click','.groupButton', function() {//add data attributes
-        numGroups = $(this).data("number");         //this assigns the number of the button to the numGroups variable using a data attribute in the html
+        numGroups = $(this).data("number");//this assigns the number of the button to the numGroups variable using a data attribute in the html
+        $('.groupButton').css({"background-color" : "#C6C6C6"});
+        $(this).css({"background-color" : "#005c7e"});
         console.log(numGroups);
     });
     $('body').on('click','.randomize', function() {
