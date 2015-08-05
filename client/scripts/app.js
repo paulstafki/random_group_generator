@@ -20,7 +20,7 @@ function splitTeams (array) {
     }
     var groupIndex = 1;
     for (var j = 0; j < array.length; j++) {
-        $('.teams' + groupIndex).append('<p>' + peopleArray[j] + '</p>');
+        $('.teams' + groupIndex).append('<p>' + array[j] + '</p>');
         $('.teams' + groupIndex + ' p').last().hide().delay(200 * j).fadeIn();     //NOTE THE SPACE BETWEEN THE CLASS AND P!!!!!!!!1
         if (groupIndex < numGroups) {
             groupIndex++;
