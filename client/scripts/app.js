@@ -16,7 +16,7 @@ function appendallthebuttons() {
 function splitTeams (array) {
     $('.groups').children().remove();
     for (var i = 1; i <= numGroups; i++) {
-        $('.groups').append('<div class="teams' + i + ' teamsies"><h2>Team: ' +(i)+ '</h2></div>');
+        $('.groups').append('<div class="teams' + i + ' teamsies"><h2>Team: ' + i + '</h2></div>');
     }
     var groupIndex = 1;
     for (var j = 0; j < array.length; j++) {
